@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title><%= titleConsulta %></title>
+  </head>
+<body>
+  <div class="conteiner">
+    <nav>
+      <ul class="menu">
+        <a href="/cadastro/criar">
+          <li>
+            Cadastro
+          </li>
+        </a>
+        <a href="/consulta/lista">
+          <li>
+            Consultas
+          </li>
+        </a>
+      </ul>
+    </nav>
+    <section class='consulta'>
+      <h1>Consultas</h1>
+      <hr><br><br>
+
+      <form action="" method="get">
+        Filtrar por profissao:<input type="text" name="filtro" class="campo" required autofocus>
+        <input type="submit" value="pesquisar" class="botao">
+      </form>
+
+    </section><br>
+  </div>
+</body>
+</html>
