@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('./partials/head') %>
+
+  <body>
+    <div class="conteiner">
+      <nav>
+        <ul class="menu">
+          <a href="/cadastro/criar">
+            <li>
+              Cadastro
+            </li>
+          </a>
+          <a href="/cadastro/lista">
+            <li>
+              Lista
+            </li>
+          </a>
+        </ul>
+      </nav>
+      <section>
+        <h1>Cadastro de Usuarios</h1>
+        <hr><br><br>
+
+        <form action="/cadastro/criar" method="POST">
+          <label for=""><strong>Nome:</strong></label><br>
+          <input type="text" name="nome" maxlength="50" class="campo" required autofocus><br>
+
+          <label for=""><strong>Email:</strong></label><br>
+          <input type="email" name="email" maxlength="50" class="campo" required><br>
+
+          <label for=""><strong>Profissão:</strong></label><br>
+          <input type="text" name="profissao" maxlength="50" class="campo" required><br><br>
+
+          <button class="botao" type="submit">Enviar</button>
+          <input type="reset" valeu="Limpar" class="botao">
+        </form><br>
+
+
+      </section><br>
+
+    </div>
+  </body>
+
+</html>
