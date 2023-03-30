@@ -8,19 +8,19 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        allowNull: false
+        notNull: true
       },
       nome: {
         type: DataTypes.STRING,
-        allowNull: false
+        notNull: true
       },
       email: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+        type: DataTypes.STRING,
+        notNull: true
       },
       profissao: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+        type: DataTypes.STRING,
+        notNull: true
       }
     },
     { // configurações da tabela

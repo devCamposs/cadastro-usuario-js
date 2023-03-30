@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('./partials/head') %>
-  </head>
+
+<head>
+  <%- include('./partials/head') %>
+</head>
+
 <body>
   <div class="conteiner">
     <nav>
@@ -12,7 +14,7 @@
             Cadastro
           </li>
         </a>
-        <a href="/consulta/lista">
+        <a href="/cadastro/lista">
           <li>
             Lista
           </li>
@@ -28,12 +30,17 @@
         <input type="submit" value="pesquisar" class="botao">
       </form>
 
-    <article>
-
-    </article>
+      <article>
+        <ul class="lista">
+          <% lista.forEach(user=>{ %>
+            <li><%= user.nome %> <br> <%= user.email %> </li>
+            <% }) %>
+        </ul>
+      </article>
 
 
     </section><br>
   </div>
 </body>
+
 </html>
