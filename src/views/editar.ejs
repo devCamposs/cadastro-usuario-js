@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<%- include('./partials/head') %>
+
+  <body>
+    <div class="conteiner">
+      <nav>
+        <ul class="menu">
+          <a href="/cadastro/criar">
+            <li>
+              Cadastro
+            </li>
+          </a>
+          <a href="/consulta">
+            <li>
+              Consultas
+            </li>
+          </a>
+        </ul>
+      </nav>
+      <section>
+        <h1>Edição de Usuarios</h1>
+        <hr><br><br>
+
+
+          <ul>
+            <li>
+              ID: <%= user.codigo %>
+            </li>
+            <li>Nome: <%= user.nome %>
+            </li>
+            <li>Email: <%= user.email %>
+            </li>
+            <li>Profissao: <%= user.profissao %>
+            </li>
+          </ul>
+     
+
+      </section><br>
+
+    </div>
+  </body>
+
+</html>

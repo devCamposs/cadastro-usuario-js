@@ -2,45 +2,51 @@
 <html lang="en">
 
 
-  <%- include('./partials/head') %>
+<%- include('./partials/head') %>
 
 
-<body>
-  <div class="conteiner">
-    <nav>
-      <ul class="menu">
-        <a href="/cadastro/criar">
-          <li>
-            Cadastro
-          </li>
-        </a>
-        <a href="/cadastro/lista">
-          <li>
-            Lista
-          </li>
-        </a>
-      </ul>
-    </nav>
-    <section class='consulta'>
-      <h1>Lista de Cadastros</h1>
-      <hr><br><br>
-
-      <form action="" method="get">
-        Filtrar por profissao:<input type="text" name="filtro" class="campo" required autofocus>
-        <input type="submit" value="pesquisar" class="botao">
-      </form>
-
-      <article>
-        <ul class="lista">
-          <% lista.forEach(user=>{ %>
-            <tr> <li><%= user.nome %> <%= user.email %> </li></tr>
-            <% }) %>
+  <body>
+    <div class="conteiner">
+      <nav>
+        <ul class="menu">
+          <a href="/cadastro/criar">
+            <li>
+              Cadastro
+            </li>
+          </a>
+          <a href="/cadastro/lista">
+            <li>
+              Lista
+            </li>
+          </a>
         </ul>
-      </article>
+      </nav>
+      <section class='consulta'>
+        <h1>Lista de Cadastros</h1>
+        <hr><br><br>
+
+        <form action="" method="get">
+          Filtrar por profissao:<input type="text" name="filtro" class="campo" required autofocus>
+          <input type="submit" value="pesquisar" class="botao">
+        </form>
+
+        <article>
+          <ul class="lista">
+            <% lista.forEach(user=>{ %>
+              <a href="/cadastro/<%= user.codigo %>">
+                <tr>
+                  <li>
+                    <%= user.nome %>
+                  </li>
+                </tr>
+              </a>
+              <% }) %>
+          </ul>
+        </article>
 
 
-    </section><br>
-  </div>
-</body>
+      </section><br>
+    </div>
+  </body>
 
 </html>
