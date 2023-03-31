@@ -1,3 +1,4 @@
+const { error } = require('console')
 const path = require('path')
 const db = require('../database/models')
 const Usuario = db.Usuario
@@ -6,32 +7,34 @@ const cadastroContrller = {
   index: (req, res) => {
 
     let atributo = {
-      title: 'Cadastro de Usuarios'
+      title: 'Cadastro de Usuario'
     }
     return res.render('cadastro', atributo)
   },
 
   cadastrado: async (req, res) => {
-    const user = {
+    Usuario.create({
       nome: req.body.nome,
       email: req.body.email,
       profissao: req.body.profissao
-    }
-    console.log(user);
-    try {
-      await Usuario.create(user)
-      res.redirect('cadastrado')
-    } catch (err) {
-      res.status(400).json(err) // 400 = Bad Request
-    }
+    })
+
+    .then(()=> res.redirect('cadastrado'))
+    .catch(error =>{
+      console.log(error)
+    })
   },
 
   lista: async (req, res) => {
+    let titleLista = {
+      title: 'Lista de Cadastro'
+    }
     Usuario.findAll()
       .then(user => {
         res.render('lista', { lista: user })
       })
-  }
+  },
+
 
 }
 
