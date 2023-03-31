@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+
   <%- include('./partials/head') %>
-</head>
+
 
 <body>
   <div class="conteiner">
@@ -33,7 +33,7 @@
       <article>
         <ul class="lista">
           <% lista.forEach(user=>{ %>
-            <li><%= user.nome %> <br> <%= user.email %> </li>
+            <tr> <li><%= user.nome %> <%= user.email %> </li></tr>
             <% }) %>
         </ul>
       </article>
