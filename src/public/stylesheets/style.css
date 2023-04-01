@@ -57,7 +57,7 @@ section {
 
 .consulta {
   width: 870px;
-  height: 500px;
+  height: 100%;
   margin-left: 10px;
   float: left;
   background-color: white;

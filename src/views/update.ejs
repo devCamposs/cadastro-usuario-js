@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('./partials/head') %>
+
+  <body>
+    <div class="conteiner">
+      <nav>
+        <ul class="menu">
+          <a href="/cadastro/criar">
+            <li>
+              Cadastro
+            </li>
+          </a>
+          <a href="/cadastro/lista">
+            <li>
+              Lista
+            </li>
+          </a>
+        </ul>
+      </nav>
+      <section>
+        <h1>Edição de Cadastro</h1>
+        <hr><br><br>
+
+        <form action="/cadastro/edit<%=user.codigo%>?_method=PUT" method="post">
+          <label for=""><strong>Nome:</strong></label><br>
+          <input type="text" name="nome" maxlength="50" class="campo" required autofocus value="<%= user.nome %>"><br>
+
+          <label for=""><strong>Email:</strong></label><br>
+          <input type="email" name="email" maxlength="50" class="campo" required value="<%= user.email %>"><br>
+
+          <label for=""><strong>Profissão:</strong></label><br>
+          <input type="text" name="profissao" maxlength="50" class="campo" required
+            value="<%= user.profissao %>"><br><br>
+
+          <button class="botao" type="submit">Salvar</button>
+          <input type="reset" valeu="Limpar" class="botao">
+        </form><br>
+
+
+      </section><br>
+
+    </div>
+  </body>
+
+</html>

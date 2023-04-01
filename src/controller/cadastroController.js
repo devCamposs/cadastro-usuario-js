@@ -42,17 +42,39 @@ const cadastroContrller = {
       const user = await Usuario.findByPk(id);
 
       if (user) {
-        console.log(user)
-        res.render('editar', { user });
+        res.render('detalhe', { user });
       } else {
-        res.render('user-not-found');
+        res.render('error', {message: 'Ocorreu um erro ao carregar a pagina'});
       }
     } catch (err) {
       res.render('error', { error: err });
     }
+  },
+
+  // *** update ***
+  edit: async (req, res) => {
+    const {id} = req.params
+    const user = await Usuario.findByPk(id)
+    return res.render('update', {user})
+  },
+
+  update: async (req, res) => {
+    const { id } = req.params
+    const { nome, email, profissao } = req.body
+
+    const user = await Usuario.update({
+      nome,
+      email,
+      profissao
+    }, {
+      where: {
+        codigo: id
+      }
+    })
+    console.log(user)
+
+    return res.render('update', {user})
   }
-
-
 }
 
 module.exports = cadastroContrller

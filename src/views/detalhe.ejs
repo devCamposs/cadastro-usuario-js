@@ -12,7 +12,7 @@
               Cadastro
             </li>
           </a>
-          <a href="/consulta">
+          <a href="/cadastro/lista">
             <li>
               Consultas
             </li>
@@ -20,7 +20,7 @@
         </ul>
       </nav>
       <section>
-        <h1>Edição de Usuarios</h1>
+        <h1>Detalhe do Usuario</h1>
         <hr><br><br>
 
 
@@ -34,8 +34,12 @@
             </li>
             <li>Profissao: <%= user.profissao %>
             </li>
-          </ul>
-     
+          </ul><br>
+
+          <form action="/cadastro/edit/<%= user.codigo %>">
+            <button type="submit" class="botao">Editar</button>
+          </form>
+
 
       </section><br>
 
